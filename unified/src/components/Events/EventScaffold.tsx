@@ -1,3 +1,5 @@
+import React from "react"
+
 import EventSortingBar from "./EventSortingBar"
 import EventCardList from "./EventCardList"
 
