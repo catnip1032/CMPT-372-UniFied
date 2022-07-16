@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom";
 // pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import NotFound from "./pages/NotFound";
 import Events from "./pages/Events";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (

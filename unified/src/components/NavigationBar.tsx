@@ -1,5 +1,3 @@
-import React from "react"
-
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -9,6 +7,7 @@ const NavigationBar = () => {
   // page content
   
   return (
+
     <Navbar bg="light" variant="light">
     <Container>
     <Navbar.Brand as={Link} to="/">UniFied</Navbar.Brand>
@@ -19,6 +18,7 @@ const NavigationBar = () => {
     </Nav>
     </Container>
   </Navbar>
+
   );
 }
 
