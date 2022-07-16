@@ -1,6 +1,6 @@
 import NavigationBar from '../components/NavigationBar';
 
-const About = () => {
+const Events = () => {
   // page content
   
   return (
@@ -8,4 +8,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Events
