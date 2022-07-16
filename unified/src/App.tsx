@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Container>
       <Routes>
-        <Route path="/" element={<Home />} exact />
+        <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />} />
         <Route element={<NotFound />} />
       </Routes>
