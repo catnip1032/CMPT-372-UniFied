@@ -160,7 +160,7 @@ const Profile = () => {
                 </Button>
             </Tab>
             <Tab eventKey="Friends" title="Friends">
-                dq
+                Friends :)
             </Tab>
             </Tabs>
         </Row>
