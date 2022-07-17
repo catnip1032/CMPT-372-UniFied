@@ -71,6 +71,9 @@ const Profile = () => {
             <Tab eventKey="Interests" title="Interests">
                 <Interests/>
             </Tab>
+            <Tab eventKey="Event Photos" title="Event Photos">
+                
+            </Tab>
             <Tab eventKey="Friends" title="Friends">
                 <Friends/>
             </Tab>

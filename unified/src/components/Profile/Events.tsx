@@ -1,15 +1,71 @@
-import { Row, Col, Card, Button } from 'react-bootstrap';
+import { useState } from 'react';
+import { Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
 import { BsPlusLg } from 'react-icons/bs';
 import { MdEvent, MdEventAvailable } from 'react-icons/md';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Events = () => {
-  // page content
+  
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [startDate, setStartDate] = useState(new Date());
   
   return (
     <>
-    <Button style={{marginTop:'16px'}} variant="primary">
+    <Button style={{marginTop:'16px'}} variant="primary" onClick={handleShow}>
         <BsPlusLg/> Host an Invitation
     </Button>
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Create Event Invitation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Event Title</Form.Label>
+              <Form.Control type="text"/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Event Date</Form.Label>
+              <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} customInput={<Form.Control/>}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Event Place</Form.Label>
+              <Form.Control as="textarea" rows={1} />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+              <Form.Label>Choose Friends</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Event Details</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Sent Invitation
+          </Button>
+        </Modal.Footer>
+    </Modal>
+
+
     <h2 style={{fontWeight: "bold", marginTop:'24px'}}>
         <MdEvent/> Upcoming Events
     </h2>
